@@ -2,6 +2,7 @@ package Reto3;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class funciones1 {
@@ -17,8 +18,21 @@ public class funciones1 {
 		
 
 		System.out.println(fecha2);
-
-		// Si no son del mismo año, calcula la media de los días mensuales que van de una fecha a otra, incluye el mes
+		
+		
+		// Si no son del mismo año,
+		if(fecha1.getYear() == fecha2.getYear()) {
+			 //calcula la media de los días mensuales que van de una fecha a otra, incluye el mes
+			int dias = (int) ChronoUnit.DAYS.between(fecha1,fecha2);
+			int meses = (int) ChronoUnit.MONTHS.between(fecha1, fecha2);			
+			int media = dias/meses;
+			System.out.println(dias);
+			System.out.println(meses);
+			System.out.println(media);
+				
+		}else {
+			System.out.println("llego aqui");
+		}
 		//de la primera fecha, pero no el el mes de la segunda fecha. Ademas, muestra las consonantes del mes de la
 		//segunda fecha separadas por comas. (Ej April -> p,r,l)
 		//Por ejemplo, si las fechas son: 1/1/2023 y 1/2/2024, hay que calcular la media de 31 (enero 2023), 28
