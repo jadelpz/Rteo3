@@ -16,6 +16,8 @@ public class Reto3 {
 		Con esas fechas:*/
 		Scanner sc = new Scanner (System.in);
 		Funciones.dimeFecha("dime fecha: ", sc);
+		
+		sc.close();
 	
 	}
 	
